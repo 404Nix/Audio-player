@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rose Player</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="player">
+    <div class="art"></div>
+  <video id="audioSource" src="audio.mp4"></video>
+
+    <!-- <div class="info">
+      <h3>Midnight Roses</h3>
+      <p>Dark Floral Mix</p>
+    </div> -->
+
+    <div class="controls">
+      <button>⏮</button>
+      <button class="play">▶</button>
+      <button>⏭</button>
+    </div>
+
+    <div class="progress">
+      <span></span>
+    </div>
+  </div>
+
+</body>
+<script>
+  const video = document.getElementById("audioSource");
+  const playBtn = document.querySelector(".play");
+
+  playBtn.addEventListener("click", () => {
+    if (video.paused) {
+      video.play();
+      playBtn.textContent = "⏸";
+    } else {
+      video.pause();
+      playBtn.textContent = "▶";
+    }
+  });
+</script>
+
+</html>
